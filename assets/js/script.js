@@ -145,6 +145,26 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
 const toggleButton = document.getElementById('nav-toggle');
 const navLinks = document.getElementById('nav-links');
 
-toggleButton.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-})
+toggleButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    if (!navLinks.contains(event.target)) {
+        navLinks.classList.toggle('show');
+    }
+});
+
+function removeNavLinksShow() {
+    navLinks.classList.remove('show');
+}
+
+document.body.addEventListener('click', (event) => {
+    const clickedElement = event.target;
+    if (!navLinks.contains(clickedElement)) {
+        removeNavLinksShow();
+    }
+});
+
+window.addEventListener('scroll', () => {
+    removeNavLinksShow();
+});

@@ -17,6 +17,10 @@
 
         --padding-inline-section: 15px;
         --transition: all 0.3s ease-in-out;
+        --header-height: 80px;
+        --footer-height: 100px;
+        --body-font: "Kanit", sans-serif;
+        --section-height: 110px;
     }
 
     .dark-mode {
@@ -39,6 +43,10 @@
 
     p {
         font-size: 15px;
+    }
+
+    .navbar {
+        margin-top: 0;
     }
 
     .nav-toggle {
