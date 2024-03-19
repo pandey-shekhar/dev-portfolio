@@ -116,6 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.getElementById('contact-form').addEventListener('submit', function (event) {
     event.preventDefault();
+    $(".loader").fadeIn("slow");
 
     const formData = new FormData(this);
     const name = formData.get('name');
@@ -131,14 +132,16 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
 
     emailjs.send('service_zapjsoq', 'template_d8aa69a', templateParams)
         .then(function (response) {
+            $(".loader").fadeOut("slow");
             console.log('Email sent successfully!', response.status, response.text);
             toastr.remove();
-            toastr.success('Query sent successfully!');
+            toastr.success('Email sent successfully!');
             document.getElementById('contact-form').reset();
         }, function (error) {
+            $(".loader").fadeOut("slow");
             console.error('Email sending failed:', error);
             toastr.remove();
-            toastr.error('Query sending failed. Please try again later.');
+            toastr.error('Email sending failed. Please try again later.');
         });
 });
 
