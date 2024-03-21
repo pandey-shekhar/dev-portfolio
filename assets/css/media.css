@@ -23,7 +23,7 @@
         --section-height: 110px;
     }
 
-    .dark-mode {
+    .light-mode {
         --primary-color: var(--primary-color-dark);
         --primary-background-color: var(--primary-background-color-dark);
         --secondary-background-color: var(--secondary-background-color-dark);

@@ -1,12 +1,41 @@
+const THEME_KEY = 'themePreference';
+(function setThemeFromStorage() {
+    const themePreference = localStorage.getItem(THEME_KEY);
+    if (themePreference === 'light-mode') {
+        document.body.classList.add('light-mode');
+    } else {
+        document.body.classList.remove('light-mode');
+    }
+})();
+
 (function () {
     emailjs.init('hYeehNGpQADhu290j');
 })();
 
-const modeToggle = document.getElementById('toggle-theme');
+toastr.options = {
+    closeButton: true,
+    progressBar: true,
+    positionClass: 'toast-top-right',
+    showDuration: '300',
+    hideDuration: '1000',
+    timeOut: '5000',
+    extendedTimeOut: '1000',
+    showEasing: 'swing',
+    hideEasing: 'linear',
+    showMethod: 'fadeIn',
+    hideMethod: 'fadeOut'
+};
 
+const modeToggle = document.getElementById('toggle-theme');
 modeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
+    document.body.classList.toggle('light-mode');
+    const theme = document.body.classList.contains('light-mode') ? 'light-mode' : 'dark-mode';
+    saveThemePreference(theme);
 });
+
+function saveThemePreference(theme) {
+    localStorage.setItem(THEME_KEY, theme);
+}
 
 document.addEventListener("DOMContentLoaded", function () {
     var homeLink = document.querySelector('.logo');
@@ -124,9 +153,9 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
     const message = formData.get('message');
 
     const templateParams = {
-        from_name: name,
-        from_email: email,
-        subject: "Portfolio Query",
+        user_name: "Portfolio",
+        user_email: email,
+        subject: `New message from ${name}`,
         message: message,
     };
 
@@ -171,3 +200,14 @@ document.body.addEventListener('click', (event) => {
 window.addEventListener('scroll', () => {
     removeNavLinksShow();
 });
+
+// const skillsContainer = document.querySelector('.skills-container');
+// let isHovered = false;
+
+// skillsContainer.addEventListener('mouseenter', () => {
+//     isHovered = true;
+// });
+
+// skillsContainer.addEventListener('mouseleave', () => {
+//     isHovered = false;
+// });

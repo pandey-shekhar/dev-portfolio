@@ -28,7 +28,7 @@
     --section-height: 110px;
 }
 
-.dark-mode {
+.light-mode {
     --primary-color: var(--primary-color-dark);
     --primary-background-color: var(--primary-background-color-dark);
     --secondary-background-color: var(--secondary-background-color-dark);
@@ -50,6 +50,10 @@ h2 {
 
 h3 {
     font-size: 1.8rem;
+}
+
+h4 {
+    font-size: 1.5rem;
 }
 
 p {
@@ -250,6 +254,11 @@ header {
 .info-para a {
     color: var(--secondary-color);
 }
+
+/* .skills-container {
+    overflow: hidden;
+    width: 100%;
+} */
 
 .skills-section {
     padding: 30px 0;
