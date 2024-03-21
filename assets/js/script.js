@@ -153,7 +153,7 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
     const message = formData.get('message');
 
     const templateParams = {
-        user_name: "Portfolio",
+        user_name: name,
         user_email: email,
         subject: `New message from ${name}`,
         message: message,
