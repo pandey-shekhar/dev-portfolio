@@ -279,7 +279,7 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
         htmlContent: htmlContent
     };
 
-    let key = "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"; // secret-scan-disable
+    let key = "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";
 
     fetch('https://api.brevo.com/v3/smtp/email', {
         method: 'POST',
