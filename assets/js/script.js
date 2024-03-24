@@ -279,37 +279,29 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
         htmlContent: htmlContent
     };
 
-    // let key = "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"; // secret-scan-disable
+    let key = "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"; // secret-scan-disable
 
-    fetch('/path/to/config.json')
-        .then(response => response.json())
-        .then(config => {
-            let key = config.apiKey;
-            fetch('https://api.brevo.com/v3/smtp/email', {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json',
-                    'api-key': key
-                },
-                body: JSON.stringify(data)
-            })
-                .then(response => response.json())
-                .then(data => {
-                    $(".loader").fadeOut("slow");
-                    console.log('Email sent successfully!');
-                    toastr.remove();
-                    toastr.success('Email sent successfully!');
-                    document.getElementById('contact-form').reset();
-                })
-                .catch(error => {
-                    $(".loader").fadeOut("slow");
-                    console.error('Email sending failed:', error);
-                    toastr.remove();
-                    toastr.error('Email sending failed. Please try again later.');
-                });
-        });
+    fetch('https://api.brevo.com/v3/smtp/email', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'api-key': key
+        },
+        body: JSON.stringify(data)
     })
-    .catch(error => {
-        // Handle errors
-    });
+        .then(response => response.json())
+        .then(data => {
+            $(".loader").fadeOut("slow");
+            console.log('Email sent successfully!');
+            toastr.remove();
+            toastr.success('Email sent successfully!');
+            document.getElementById('contact-form').reset();
+        })
+        .catch(error => {
+            $(".loader").fadeOut("slow");
+            console.error('Email sending failed:', error);
+            toastr.remove();
+            toastr.error('Email sending failed. Please try again later.');
+        });
+});
