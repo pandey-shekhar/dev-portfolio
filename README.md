@@ -1,5 +1,5 @@
 # 💫 About Me:
-🔭 I’m currently working on building fully conversational application with all types of file sharing and audio/video call and screen sharing.<br>👯 I’m looking to collaborate on all types of project on PHP and MERN stack.<br>🌱 I’m currently learning ReactJs and frontend because I'm a backend developer.<br>💬 Ask me about questions which gives me the addition in my knowledge.<br>⚡ Fun fact, I'm a developer and I love errors.
+🔭 I’m currently working on building fully conversational application.<br>👯 I’m looking to collaborate on all types of project on PHP and MERN stack.<br>🌱 I’m currently learning ReactJs and frontend because I'm a backend developer.<br>💬 Ask me about questions which gives me the addition in my knowledge.<br>⚡ Fun fact, I'm a developer and I love errors.
 
 
 ## 🌐 Socials:
